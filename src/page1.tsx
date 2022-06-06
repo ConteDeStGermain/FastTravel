@@ -5,7 +5,6 @@ import {
   Center,
   Text,
   Heading,
-  Image,
   Stack,
 } from "@chakra-ui/react"
 import theme from './theme'
@@ -18,7 +17,7 @@ export const Page1 = () => (
         <Heading marginTop='4vh' color={'#F5F5F5'} fontSize='5xl'>An Itinerary for every destination</Heading>
       </Center>
       <Center>
-        <Stack marginTop='70px' direction='row' spacing='0' boxShadow='2xl' borderRadius='20px 20px 20px 20px'>
+        <Stack marginTop='70px' direction='row' spacing='0' boxShadow='dark-lg' borderRadius='20px 20px 20px 20px'>
           <Box 
             backgroundImage='/barcelona.jpg' 
             width={'290px'}
@@ -50,7 +49,7 @@ export const Page1 = () => (
             textAlign={'center'}
           >
             <Text fontSize='4xl' fontWeight={'bold'} color={'#F5F5F5'} position={'relative'} top={'80%'}>
-              Timisoara
+              Timișoara
             </Text>
           </Box>
           <Box 
