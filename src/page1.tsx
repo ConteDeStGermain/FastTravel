@@ -14,15 +14,14 @@ export const Page1 = () => (
     <Box bg='#4BBEE3' height={'65vh'}>
       <Text paddingLeft={5} paddingTop={4} color={'#F5F5F5'} fontWeight='bold' fontSize='3xl'>FastTravel</Text>
       <Center>
-        <Heading marginTop='4vh' color={'#F5F5F5'} fontSize='5xl'>An Itinerary for every destination</Heading>
+        <Heading marginTop='4vh' color={'#F5F5F5'} fontSize='5xl'>An itinerary for every destination</Heading>
       </Center>
       <Center>
         <Box marginTop='70px' display='flex' flexDirection='row' boxShadow='dark-lg' borderRadius='20px 20px 20px 20px' height='27.2em'>
           <Box 
             backgroundImage='/barcelona.jpg' 
             width='18em'
-    
-            backgroundSize='contain'
+            backgroundSize='101%'
             borderRadius='20px 0px 0px 20px'
             textAlign={'center'}
           >
@@ -33,8 +32,7 @@ export const Page1 = () => (
           <Box 
             backgroundImage='/london.jpg' 
             width='18em'
-
-            backgroundSize='contain'
+            backgroundSize='101%'
             textAlign={'center'}
           >
             <Text fontSize='4xl' fontWeight={'bold'} color={'#F5F5F5'} position={'relative'} top={'80%'}>
@@ -44,8 +42,7 @@ export const Page1 = () => (
           <Box 
             backgroundImage='/timisoara.jpg' 
             width='18em'
-
-            backgroundSize='contain'
+            backgroundSize='101%'
             textAlign={'center'}
           >
             <Text fontSize='4xl' fontWeight={'bold'} color={'#F5F5F5'} position={'relative'} top={'80%'}>
@@ -55,8 +52,7 @@ export const Page1 = () => (
           <Box 
             backgroundImage='/athens.jpg' 
             width='18em'
-
-            backgroundSize='contain'
+            backgroundSize='101%'
             borderRadius='0px 20px 20px 0px'
             textAlign={'center'}
           >
