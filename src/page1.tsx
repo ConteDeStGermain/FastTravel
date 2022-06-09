@@ -17,12 +17,12 @@ export const Page1 = () => (
         <Heading marginTop='4vh' color={'#F5F5F5'} fontSize='5xl'>An Itinerary for every destination</Heading>
       </Center>
       <Center>
-        <Stack marginTop='70px' direction='row' spacing='0' boxShadow='dark-lg' borderRadius='20px 20px 20px 20px'>
+        <Box marginTop='70px' display='flex' flexDirection='row' boxShadow='dark-lg' borderRadius='20px 20px 20px 20px' height='27.2em'>
           <Box 
             backgroundImage='/barcelona.jpg' 
-            width={'290px'}
-            height={'435px'}
-            backgroundSize='290px'
+            width='18em'
+    
+            backgroundSize='contain'
             borderRadius='20px 0px 0px 20px'
             textAlign={'center'}
           >
@@ -32,9 +32,9 @@ export const Page1 = () => (
           </Box>
           <Box 
             backgroundImage='/london.jpg' 
-            width={'290px'}
-            height={'435px'}
-            backgroundSize='290px'
+            width='18em'
+
+            backgroundSize='contain'
             textAlign={'center'}
           >
             <Text fontSize='4xl' fontWeight={'bold'} color={'#F5F5F5'} position={'relative'} top={'80%'}>
@@ -43,9 +43,9 @@ export const Page1 = () => (
           </Box>
           <Box 
             backgroundImage='/timisoara.jpg' 
-            width={'290px'}
-            height={'435px'}
-            backgroundSize='290px'
+            width='18em'
+
+            backgroundSize='contain'
             textAlign={'center'}
           >
             <Text fontSize='4xl' fontWeight={'bold'} color={'#F5F5F5'} position={'relative'} top={'80%'}>
@@ -54,9 +54,9 @@ export const Page1 = () => (
           </Box>
           <Box 
             backgroundImage='/athens.jpg' 
-            width={'290px'}
-            height={'435px'}
-            backgroundSize='290px'
+            width='18em'
+
+            backgroundSize='contain'
             borderRadius='0px 20px 20px 0px'
             textAlign={'center'}
           >
@@ -64,7 +64,7 @@ export const Page1 = () => (
               Athens
             </Text>
           </Box>
-        </Stack>
+        </Box>
       </Center>
     </Box>
     <Box bg="#F5F5F5" height={'35vh'}></Box>
