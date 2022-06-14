@@ -1,0 +1,20 @@
+.lifted {
+  animation: liftUp 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+.putDown {
+  animation: putDown 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes liftUp {
+  from {box-shadow: 0px 0px 0px;}
+  to {box-shadow: 0px 3px 15px;}
+}
+
+@keyframes putDown {
+  from {box-shadow: 0px 3px 15px;}
+  to {box-shadow: 0px 0px 0px;}
+}

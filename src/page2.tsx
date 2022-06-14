@@ -41,12 +41,12 @@ export const Page2 = () => (
             <Box height={'100%'} marginRight={'15%'} textAlign={'right'}>
               <Heading color={'#090909'} marginTop={'30%'} as='h1' size='2xl'>The idea</Heading>
               <br/>
-              <Text color={'#090909'} fontSize='2xl' lineHeight={'100%'}>
+              <Text color={'#090909'} fontSize='2xl' lineHeight={'110%'}>
                 The idea of FastTravel is to algorithmaically <br/>
                 generate a trip itinerary to anywhere in the world. 
               </Text>
               <br/>
-              <Text color={'#090909'} fontSize='2xl' lineHeight={'100%'}>
+              <Text color={'#090909'} fontSize='2xl' lineHeight={'110%'}>
                 This means that based only on the destination <br/>
                 and the length of your trip we would instantly <br/>
                 provide you a schedule of what to do and when <br/>
