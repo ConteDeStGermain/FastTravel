@@ -18,3 +18,22 @@
   from {box-shadow: 0px 3px 15px;}
   to {box-shadow: 0px 0px 0px;}
 }
+
+.largerThenParent {
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+}
+
+.typeCards {
+  width: 13em;
+  border-radius: 15px 15px 15px 15px;
+  background-size: 101%;
+  text-align: center;
+  margin-right: 4em;
+}
+
+.selected {
+  border-color: #4BBEE3;
+  border-width: 5px;
+}

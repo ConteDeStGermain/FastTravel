@@ -5,19 +5,18 @@ import {
   Center,
   Text,
   Heading,
-  Stack,
 } from "@chakra-ui/react"
 import theme from './theme'
 
 export const Page1 = () => (
   <ChakraProvider theme={theme}>
-    <Box bg='#4BBEE3' height={'65vh'}>
+    <Box className="largerThenParent" bg='#4BBEE3' height={'65vh'}>
       <Text paddingLeft={5} paddingTop={4} color={'#F5F5F5'} fontWeight='bold' fontSize='3xl'>FastTravel</Text>
       <Center>
         <Heading marginTop='4vh' color={'#F5F5F5'} fontSize='5xl'>An itinerary for every destination</Heading>
       </Center>
       <Center>
-        <Box marginTop='70px' display='flex' flexDirection='row' boxShadow='dark-lg' borderRadius='20px 20px 20px 20px' height='27.2em'>
+        <Box marginTop="8em" display='flex' flexDirection='row' boxShadow='dark-lg' borderRadius='20px 20px 20px 20px' height='27.2em'>
           <Box 
             backgroundImage='/barcelona.jpg' 
             width='18em'

@@ -12,7 +12,7 @@ import theme from './theme'
 
 export const Page2 = () => (
   <ChakraProvider theme={theme}>
-    <Box bg='#F5F5F5' height={'100vh'}>
+    <Box  bg='#F5F5F5' height={'100vh'}>
       <Text paddingLeft={5} paddingTop={4} color={'#090909'} fontWeight='bold' fontSize='3xl'>FastTravel</Text>
       <SimpleGrid columns={2} spacing={10}>
         <Center>
@@ -21,7 +21,7 @@ export const Page2 = () => (
               src='/map.jpg'
               alt='An aesthetic picture of a map.' 
               borderRadius='20px 20px 20px 20px'
-              width={'420px'}
+              width='400px'
               position='relative'
               top='5em'
               left='-3em'
@@ -30,7 +30,7 @@ export const Page2 = () => (
               src='/globe.jpg'
               alt='An aesthetic picture of a globe.' 
               borderRadius='20px 20px 20px 20px'
-              width='420px'
+              width='400px'
               left='7em'
               top='-4em'
               boxShadow='dark-lg'
