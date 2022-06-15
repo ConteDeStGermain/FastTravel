@@ -6,13 +6,14 @@ import {
   Text,
   Heading,
   Grid,
-  GridItem
+  GridItem,
+  Fade
 } from "@chakra-ui/react"
 import theme from './theme'
 import './customCss.css'
 
 const Page3 = () => {
-  const [isHovered, setHovered] = useState(false);
+  const [isHovered, setHovered] = useState('');
 
   return (
   <ChakraProvider theme={theme}>
@@ -36,7 +37,7 @@ const Page3 = () => {
         </GridItem>
         <GridItem>
           <Center>
-            <Text marginTop='1em' lineHeight={'110%'} textAlign='center' width='75%' fontSize='2xl'>
+            <Text marginTop='1em' lineHeight='110%' textAlign='center' width='75%' fontSize='2xl'>
               Start by selecting the type of trip you wish to have. This will determine which activities you will do the most. 
               But regardless of what you pick you will still do certain common activities. <br/> (You can't go to Barcelona without seeing park Güell!)
             </Text>
@@ -47,22 +48,31 @@ const Page3 = () => {
             <Center>
               <Box  display='flex' flexDirection='row' height='300px'>
                 <Box 
-                  onMouseEnter={() => setHovered(true)}
-                  onMouseLeave={() => setHovered(false)}
+                  onMouseEnter={() => setHovered('cultural')}
+                  onMouseLeave={() => setHovered('')}
+                  className={isHovered==='cultural' ? 'lifted' : 'putDown'}
                   backgroundImage='/cultural.jpg' 
                   width='13em'
                   borderRadius='15px 15px 15px 15px'
                   marginRight="40px"
                   backgroundSize='101%'
                   textAlign='center'
-                  className={isHovered ? 'lifted' : 'putDown'}
-                  // boxShadow={isHovered ? 'dark-lg' : ''}
                 >
-                  {/* <Text fontSize='4xl' fontWeight={'bold'} color={'#F5F5F5'} position={'relative'} top={'80%'}>
-                    Barcelona
-                  </Text> */}
+                  <Fade in={isHovered==='cultural' ? true : false}>
+                    <Box background='rgba(0, 0, 0, 0.5)' borderRadius='15px 15px 15px 15px' height='300px' zIndex='0'>
+                      <Text zIndex='1' opacity='100%' fontSize='4xl' fontWeight='bold' color='#F5F5F5' position='relative' top='40%'>
+                        Cultural
+                      </Text>
+                      <Text fontSize="lg" fontWeight='medium' lineHeight='110%' color='#F5F5F5' position='relative' top='40%'>
+                        Select this type if achitecture, history, and guided tours are more your thing.
+                      </Text>
+                    </Box>
+                  </Fade>
                 </Box>
                 <Box 
+                  onMouseEnter={() => setHovered('nightlife')}
+                  onMouseLeave={() => setHovered('')}
+                  className={isHovered==='nightlife' ? 'lifted' : 'putDown'}
                   backgroundImage='/nightlife.jpg' 
                   width='13em'
                   borderRadius='15px 15px 15px 15px'
@@ -70,11 +80,21 @@ const Page3 = () => {
                   backgroundSize='101%'
                   textAlign={'center'}
                 >
-                  {/* <Text fontSize='4xl' fontWeight={'bold'} color={'#F5F5F5'} position={'relative'} top={'80%'}>
-                    London
-                  </Text> */}
+                 <Fade in={isHovered==='nightlife' ? true : false}>
+                    <Box background='rgba(0, 0, 0, 0.5)' borderRadius='15px 15px 15px 15px' height='300px' zIndex='0'>
+                      <Text zIndex='1' opacity='100%' fontSize='4xl' fontWeight='bold' color='#F5F5F5' position='relative' top='40%'>
+                        Nightlife
+                      </Text>
+                      <Text fontSize="lg" fontWeight='medium' lineHeight='110%' color='#F5F5F5' position='relative' top='40%'>
+                        Select this type if you wish to party more then anything else. 😉
+                      </Text>
+                    </Box>
+                  </Fade>
                 </Box>
                 <Box 
+                  onMouseEnter={() => setHovered('outdoors')}
+                  onMouseLeave={() => setHovered('')}
+                  className={isHovered==='outdoors' ? 'lifted' : 'putDown'}
                   backgroundImage='/outdoors.jpg' 
                   width='13em'
                   borderRadius='15px 15px 15px 15px'
@@ -82,20 +102,37 @@ const Page3 = () => {
                   backgroundSize='101%'
                   textAlign={'center'}
                 >
-                  {/* <Text fontSize='4xl' fontWeight={'bold'} color={'#F5F5F5'} position={'relative'} top={'80%'}>
-                    Timișoara
-                  </Text> */}
+                  <Fade in={isHovered==='outdoors' ? true : false}>
+                    <Box background='rgba(0, 0, 0, 0.5)' borderRadius='15px 15px 15px 15px' height='300px' zIndex='0'>
+                      <Text zIndex='1' opacity='100%' fontSize='4xl' fontWeight='bold' color='#F5F5F5' position='relative' top='40%'>
+                        Outdoors
+                      </Text>
+                      <Text fontSize="lg" textAlign='center' fontWeight='medium' lineHeight='110%' color='#F5F5F5' position='relative' top='40%'>
+                        Select this type if you <br/> like hikes, trails, and beautiful views.
+                      </Text>
+                    </Box>
+                  </Fade>
                 </Box>
                 <Box 
+                  onMouseEnter={() => setHovered('mix')}
+                  onMouseLeave={() => setHovered('')}
+                  className={isHovered==='mix' ? 'lifted' : 'putDown'}
                   backgroundImage='/mix.jpg' 
                   width='13em'
                   borderRadius='15px 15px 15px 15px'
                   backgroundSize='101%'
                   textAlign={'center'}
                 >
-                  {/* <Text fontSize='4xl' fontWeight={'bold'} color={'#F5F5F5'} position={'relative'} top={'80%'}>
-                    Athens
-                  </Text> */}
+                 <Fade in={isHovered==='mix' ? true : false}>
+                    <Box background='rgba(0, 0, 0, 0.5)' borderRadius='15px 15px 15px 15px' height='300px' zIndex='0'>
+                      <Text zIndex='1' opacity='100%' fontSize='4xl' fontWeight='bold' color='#F5F5F5' position='relative' top='40%'>
+                        Mix
+                      </Text>
+                      <Text fontSize="lg" textAlign='center' fontWeight='medium' lineHeight='110%' color='#F5F5F5' position='relative' top='40%'>
+                        Select this type if you want a mix of all sort of activities.
+                      </Text>
+                    </Box>
+                  </Fade>
                 </Box>
               </Box>
             </Center>
