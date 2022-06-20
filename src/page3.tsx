@@ -12,24 +12,34 @@ import {
 } from "@chakra-ui/react"
 import theme from './theme'
 import './customCss.css'
+import { Element } from "react-scroll";
 
-const Page3 = () => {
+const Page3 = (prop: {setType: React.Dispatch<React.SetStateAction<any>>}) => {
+// const Page3 = () => {
   const [isHovered, setHovered] = useState('');
+  const [selected, setSelected] = useState('')
+
+  const handleSelectedType = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const target = e.target as HTMLTextAreaElement;
+    var type = target.innerText.split('\n')[0]
+    prop.setType(type)
+    setSelected(type)
+  }
 
   return (
   <ChakraProvider theme={theme}>
-    <Box bg='#F5F5F5' height={'100vh'}>
-      <Text paddingLeft={5} paddingTop={4} color='#090909' fontWeight='bold' fontSize='3xl'>FastTravel</Text>
+    <Element name="page3" height='100vh' />
+    <Box height={'100vh'}>
       <Grid>
         <GridItem rowSpan={2}>
           <Center>
-            <Heading size={'2xl'}>Limited Beta</Heading>
+            <Heading size='2xl'>Limited Beta</Heading>
           </Center>
         </GridItem>
         <GridItem>
           <Center>
             <Text  marginTop='0.5em' lineHeight={'110%'} textAlign='center' width='75%' fontSize='2xl'>
-              In order to see if there is interest in this idea, we are currently running a limit beta. 
+              In order to see if there is interest in this idea, we are currently running a limited beta. 
               If you want an itinerary generated for you, fill in the form below. If this idea doesn't appeal 
               to you, feel fee to share it with a first time traveller, or someone you think 
               would benefit from a generated itinerary.
@@ -45,18 +55,20 @@ const Page3 = () => {
           </Center>
         </GridItem>
         <GridItem>
-          <Heading marginTop="190px" marginLeft="15px" position="absolute" size="4xl"transform="rotate(270deg)">Type</Heading>
+          <Heading marginTop="190px" marginLeft="15px" position="absolute" size="4xl" transform="rotate(270deg)">Type</Heading>
             <Center>
               <Box marginTop="5em" display='flex' flexDirection='row' height='300px'>
                 <Box 
                   onMouseEnter={() => setHovered('cultural')}
                   onMouseLeave={() => setHovered('')}
-                  className={'typeCards ' + (isHovered==='cultural' ? 'lifted' : 'putDown')}
+                  id="culutral"
+                  onClick={(e) => handleSelectedType(e)}
+                  className={'typeCards ' + (isHovered==='cultural' ? 'lifted ' : 'putDown ')}
                   backgroundImage='/cultural.jpg' 
                 >
                   <Fade in={isHovered==='cultural' ? true : false}>
                     <Box background='rgba(0, 0, 0, 0.5)' borderRadius='15px 15px 15px 15px' height='300px' zIndex='0'>
-                      <Text zIndex='1' opacity='100%' fontSize='4xl' fontWeight='bold' color='#F5F5F5' position='relative' top='40%'>
+                      <Text  opacity='100%' fontSize='4xl' fontWeight='bold' color='#F5F5F5' position='relative' top='40%'>
                         Cultural
                       </Text>
                       <Text fontSize="lg" fontWeight='medium' lineHeight='110%' color='#F5F5F5' position='relative' top='40%'>
@@ -65,12 +77,14 @@ const Page3 = () => {
                     </Box>
                   </Fade> 
                   <SlideFade in={ isHovered !== 'cultural' } offsetY='-20px'>
-                    <Heading marginTop="10px" >Cultural</Heading>
+                    <Heading marginTop="10px" display={selected=== "Cultural" ? "none" : "block"}>Cultural</Heading>
+                    <Heading marginTop="10px" color="#4BBEE3" display={selected=== "Cultural" ? "block" : "none"} >Selected</Heading>
                   </SlideFade>
                 </Box>
                 <Box 
                   onMouseEnter={() => setHovered('nightlife')}
                   onMouseLeave={() => setHovered('')}
+                  onClick={(e) => handleSelectedType(e)}
                   className={'typeCards ' + (isHovered==='nightlife' ? 'lifted' : 'putDown')}
                   backgroundImage='/nightlife.jpg' 
                 >
@@ -85,12 +99,14 @@ const Page3 = () => {
                     </Box>
                   </Fade>
                   <SlideFade in={ isHovered !== 'nightlife' } offsetY='-20px'>
-                    <Heading marginTop="10px" >Nightlife</Heading>
+                    <Heading marginTop="10px" display={selected=== "Nightlife" ? "none" : "block"}>Nightlife</Heading>
+                    <Heading marginTop="10px" color="#4BBEE3" display={selected=== "Nightlife" ? "block" : "none"}>Selected</Heading>
                   </SlideFade>
                 </Box>
                 <Box 
                   onMouseEnter={() => setHovered('outdoors')}
                   onMouseLeave={() => setHovered('')}
+                  onClick={(e) => handleSelectedType(e)}
                   className={'typeCards ' + (isHovered==='outdoors' ? 'lifted' : 'putDown')}
                   backgroundImage='/outdoors.jpg' 
                 >
@@ -105,12 +121,14 @@ const Page3 = () => {
                     </Box>
                   </Fade>
                   <SlideFade in={ isHovered !== 'outdoors' } offsetY='-20px'>
-                    <Heading marginTop="10px" >Outdoors</Heading>
+                    <Heading marginTop="10px" display={selected=== "Outdoors" ? "none" : "block"}>Outdoors</Heading>
+                    <Heading marginTop="10px" color="#4BBEE3" display={selected=== "Outdoors" ? "block" : "none"}>Selected</Heading>
                   </SlideFade>
                 </Box>
                 <Box 
                   onMouseEnter={() => setHovered('mix')}
                   onMouseLeave={() => setHovered('')}
+                  onClick={(e) => handleSelectedType(e)}
                   className={'typeCards ' + (isHovered==='mix' ? 'lifted' : 'putDown')}
                   backgroundImage='/mix.jpg' 
                   marginRight="0px"
@@ -126,7 +144,8 @@ const Page3 = () => {
                     </Box>
                   </Fade>
                   <SlideFade in={ isHovered !== 'mix' } offsetY='-20px'>
-                    <Heading marginTop="10px" >Mix</Heading>
+                    <Heading marginTop="10px" display={selected=== "Mix" ? "none" : "block"}>Mix</Heading>
+                    <Heading marginTop="10px" color="#4BBEE3" display={selected=== "Mix" ? "block" : "none"}>Selected</Heading>
                   </SlideFade>
                 </Box>
               </Box>

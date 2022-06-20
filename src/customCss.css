@@ -37,3 +37,11 @@
   border-color: #4BBEE3;
   border-width: 5px;
 }
+
+.circle {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 50%;
+}
